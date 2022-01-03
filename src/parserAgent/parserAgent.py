@@ -36,22 +36,28 @@ class MobileAgent(object):
 
         while not isLastPage: 
             start_time = time.monotonic()
-            
-            isLastPage = parse.getData(self.result, self.query, currentPage, pageNumber, isLastPage, driver)
-
-            currentItem = len(self.result)
-            print("Страница ", currentPage, " обработана успешно: ", not isLastPage, "\nПроцесс ожидания...")  
-            
-            pageNumber = parse.getNumberNextPage(pageNumber)    
-            if currentPage == int(settings['max_pages']):
-                break
-            currentPage += 1
-            end_time = time.monotonic()
-            while end_time - start_time < settings['min_time_parse']:
+            result_copy = self.result 
+            try:
+                isLastPage = parse.getData(self.result, self.query, currentPage, pageNumber, isLastPage, driver)
+            except:
+                print("Страница ", currentPage, " произошла ошибка. \nПроцесс ожидания...")
+                pageNumber = parse.getNumberNextPage(pageNumber)    
+                if currentPage == int(settings['max_pages']):
+                    break
+                currentPage += 1
+            else:
+                currentItem = len(self.result)
+                print("Страница ", currentPage, " обработана успешно: ", not isLastPage, "\nПроцесс ожидания...")  
+                pageNumber = parse.getNumberNextPage(pageNumber)    
+                if currentPage == int(settings['max_pages']):
+                    break
+                currentPage += 1
                 end_time = time.monotonic()
+                while end_time - start_time < settings['min_time_parse']:
+                    end_time = time.monotonic()
             
-        print(self.result)
-        return self.result
+        print(result_copy)
+        return result_copy
 
     def getResourse(self):
         if self.resource is utils.parseResource.GoogleSearch:
@@ -168,8 +174,8 @@ class GoogleSearch(Parser):
             for q in quote.find_all("a"):
                 if (q.text.find("Цитируется") != -1):
                     numberOfCitations = int(q.text[q.text.find(":") + 2:len(q.text)])
-            objDate = self.getNowDate()
-            result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleSearch.value})
+            #objDate = self.getNowDate()
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleSearch.value})
             #print({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": 1111, "date": objDate})
             isLastPage = False
         return isLastPage
@@ -224,8 +230,8 @@ class GoogleBooks(Parser):
                 author = self.getNormalizeStrAuthor(authorAndDatePublished)
                 datePublished = self.getDatePublished(authorAndDatePublished)
                 type = utils.typeParseItem.Book.value
-                objDate = self.getNowDate()
-                result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleBooks.value})
+                #objDate = self.getNowDate()
+                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleBooks.value})
                 isLastPage = False
         
         return isLastPage
@@ -280,8 +286,8 @@ class MicrosoftAcademic(Parser):
             print(datePublished)
             entry1 = entry.find("div", attrs={"class", "citations"})
             numberOfCitations = self.getNumberCitation(entry1.find("span").text)
-            objDate = self.getNowDate()
-            result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.MicrosoftAcademic.value})
+            #objDate = self.getNowDate()
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.MicrosoftAcademic.value})
             isLastPage = False
         
         return isLastPage
@@ -343,8 +349,8 @@ class CyberLeninka(Parser):
             author = self.getNormalizeStrAuthor(entry1.find("span").text)
             datePublished = entry1.find("span", attrs={"class": "span-block"}).text[0:4]
             views, dowloads = self.getViewsAndDowloadsCyberLink(url)
-            objDate = self.getNowDate()
-            result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.CyberLeninka.value})
+            #objDate = self.getNowDate()
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.CyberLeninka.value})
             isLastPage = False
         
         return isLastPage
@@ -386,8 +392,8 @@ class PubMed(Parser):
             author = self.getNormalizeStrAuthor(entry.find("span", attrs={"class", "docsum-authors full-authors"}).text)
             datePublished = self.getDatePublished(entry.find("span", attrs={"class", "docsum-journal-citation full-journal-citation"}).text)
             type = utils.typeParseItem.Article.value
-            objDate = self.getNowDate()
-            result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": 0, "views": 0, "dowloads": 0, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.PubMed.value})
+            #objDate = self.getNowDate()
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": 0, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.PubMed.value})
             isLastPage = False
         
         return isLastPage
@@ -445,8 +451,8 @@ class Frontiersin(Parser):
                 #print(views, dowloads, numberOfCitations)
                 url = url # там че то нет ссылки
                 type = utils.typeParseItem.Article.value
-                objDate = self.getNowDate()
-                result.append({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "date": objDate, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.Frontiersin.value})
+                #objDate = self.getNowDate()
+                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.Frontiersin.value})
                 
         return True
 
