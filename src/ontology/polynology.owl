@@ -1,0 +1,2749 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112"
+         xmlns="http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112"/>
+
+<owl:ObjectProperty rdf:about="#АвторВебРесурса">
+  <rdfs:domain rdf:resource="#Авторы"/>
+  <rdfs:range rdf:resource="#ВебРесурсы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#АвторКниги">
+  <rdfs:domain rdf:resource="#Авторы"/>
+  <rdfs:range rdf:resource="#Книги"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#АвторПисалПро">
+  <rdfs:domain rdf:resource="#Авторы"/>
+  <rdfs:range rdf:resource="#Темы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#АвторСтатьи">
+  <rdfs:domain rdf:resource="#Авторы"/>
+  <rdfs:range rdf:resource="#Статьи"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ВебРесурсНаписанАвтором">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="#Авторы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ВебРесурсНаписанПро">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="#Темы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#КнигаНаписанаАвтором">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="#Авторы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#КнигаНаписанаПро">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="#Темы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ПользовательИнтересуется">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="#Темы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#СтатьяНаписанаАвтором">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="#Авторы"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#СтатьяНаписанаПро">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="#Темы"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#articleFromResource">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#bookFromResource">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dateArticle">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dateBook">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#datePublishedArticle">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#datePublishedBook">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#datePublishedWebResourse">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dateWebResourse">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dowloadsArticle">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dowloadsBook">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#dowloadsWebResourse">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLastName">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasLogin">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPlaceOfWork">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRole">
+  <rdfs:domain rdf:resource="#Пользователи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#numberOfCitationsArticle">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#numberOfCitationsBook">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#numberOfCitationsWebResourse">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ratingArticle">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ratingBook">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ratingWebResourse">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#urlArticle">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#urlBook">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#urlWebResourse">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#viewsArticle">
+  <rdfs:domain rdf:resource="#Статьи"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#viewsBook">
+  <rdfs:domain rdf:resource="#Книги"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#viewsWebResourse">
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#webFromResource">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ВебРесурсы"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Авторы">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ВебРесурсы"/>
+
+<owl:Class rdf:about="#Книги">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Темы">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Статьи">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Пользователи">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+
+<Авторы rdf:about="#Akademii_a_nauk_SSSR">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_и_палеогеография_материалы_IV_Всесоюзной"/>
+  <АвторКниги rdf:resource="#Палинология_плейстоцена_к_III_ей_Междунар_палинолог_конф"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_и_палеогеография_материалы_IV_Всесоюзной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Akademii_a_nauk_SSSR"/>
+  <КнигаНаписанаАвтором rdf:resource="#Ural_ski_nauch_t_s_entr"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.ru/books?id=8YgHAQAAIAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgJEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Книги rdf:about="#Палинология_плейстоцена_к_III_ей_Междунар_палинолог_конф">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Akademii_a_nauk_SSSR"/>
+  <КнигаНаписанаАвтором rdf:resource="#Institut_geografii"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=y7mhpwAACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAYQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Ural_ski_nauch_t_s_entr">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_и_палеогеография_материалы_IV_Всесоюзной"/>
+</Авторы>
+
+<Авторы rdf:about="#Institut_geografii">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_плейстоцена_к_III_ей_Междунар_палинолог_конф"/>
+</Авторы>
+
+<Авторы rdf:about="#Institut_geologii_i_geofiziki_SSSR">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_кайнофита_Труды_III_Международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_кайнофита_Труды_III_Международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Institut_geologii_i_geofiziki_SSSR"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=aBPnMgEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAQQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Izdatel_stvo_Nauka">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_мезофита_труды_III_Международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_мезофита_труды_III_Международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Izdatel_stvo_Nauka"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=wZ8CugEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAUQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Nauka">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_четвертичного_периода"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_четвертичного_периода">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Nauka"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=56EHAQAAIAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgAEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Valentina_Sergeevna_Volkova">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_мезозоя_и_кайнозоя_Сибири"/>
+</Авторы>
+
+<Книги rdf:about="#Стратиграфия_и_палинология_мезозоя_и_кайнозоя_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Valentina_Sergeevna_Volkova"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=807mAAAAMAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAcQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Темы rdf:about="#palynology">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Темы>
+
+<Авторы rdf:about="#А_А_Курбатова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#К_палинологии_раннего_триаса_Сибири"/>
+</Авторы>
+
+<Статьи rdf:about="#К_палинологии_раннего_триаса_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#А_А_Курбатова"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1975</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/k-palinologii-rannego-triasa-sibiri</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#А_Ф_Хлонова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинологическая_характеристика_меловых_отложений_на_р_Кие"/>
+</Авторы>
+
+<Книги rdf:about="#Палинологическая_характеристика_меловых_отложений_на_р_Кие">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#А_Ф_Хлонова"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=4Z6EaEXpwlIC&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAMQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#АА_Галанин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_и_радиоуглеродные_данные_о_верхнечетвертичных_отложениях_дюнного_массива_тукулан_Кысыл_Сырский_Центральная_Якутия"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологические_и_радиоуглеродные_данные_о_верхнечетвертичных_отложениях_дюнного_массива_тукулан_Кысыл_Сырский_Центральная_Якутия">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#МР_Павлова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АА_Галанин"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НА_Рудая"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=26525978</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АВ_Рябоконь">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_по_разрезу_Кашпир_Русская_платформа"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_палинологические_данные_по_разрезу_Кашпир_Русская_платформа">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕБ_Пещевицкая"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АВ_Рябоконь"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://paleosamara.ru/wp-content/uploads/2017/11/%D0%9F%D0%B5%D1%89%D0%B5%D0%B2%D0%B8%D1%86%D0%BA%D0%B0%D1%8F-%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%9A%D0%B0%D1%88%D0%BF%D0%B8%D1%80.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АК_Васильчук">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_и_хронология_полигонально_жильных_комплексов_в_криолитозоне_России"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология_и_хронология_повторно_жильных_льдов"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_и_хронология_полигонально_жильных_комплексов_в_криолитозоне_России">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#АК_Васильчук"/>
+  <КнигаНаписанаАвтором rdf:resource="#ЮК_Васильчук"/>
+  <КнигаНаписанаПро rdf:resource="#палинология"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2007</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <dowloadsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsBook>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</numberOfCitationsArticle>
+  <numberOfCitationsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</numberOfCitationsBook>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=19478321</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+  <viewsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsBook>
+</Книги>
+
+<Статьи rdf:about="#Палинология_и_хронология_повторно_жильных_льдов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АК_Васильчук"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://static.freereferats.ru/_avtoreferats/01004591663.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АР_Ишбирдин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#РГ_Курманов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АР_Ишбирдин"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</numberOfCitationsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=22839157</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АС_Алешинская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Результаты_палинологических_исследований_в_пойме_реки_Москвы_у_поселка_РАНИС"/>
+  <АвторСтатьи rdf:resource="#Природная_среда_окрестностей_Болгарского_городища_по_материалам_палинологических_исследований_культурного_слоя_раскопа_CLXXIX"/>
+  <АвторСтатьи rdf:resource="#Результаты_палеопочвенных_и_палинологических_исследований_культурного_слоя_в_восточной_части_кремлевского_холма"/>
+</Авторы>
+
+<Статьи rdf:about="#Результаты_палинологических_исследований_в_пойме_реки_Москвы_у_поселка_РАНИС">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕА_Спиридонова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АС_Алешинская"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=44496479</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Природная_среда_окрестностей_Болгарского_городища_по_материалам_палинологических_исследований_культурного_слоя_раскопа_CLXXIX">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АС_Алешинская"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕА_Спиридонова"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/18224490</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АС_Якимов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_и_палеопочвенные_исследования_на_археологических_памятниках_анализ_возможностей_и_методика_работ"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологические_и_палеопочвенные_исследования_на_археологических_памятниках_анализ_возможностей_и_методика_работ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НЕ_Рябогина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АС_Якимов"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/12755393</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АФ_Хлонова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Темы rdf:about="#палинология">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Темы>
+
+<Авторы rdf:about="#АЮ_Гужиков">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_седиментологические_магнитостратиграфические_и_палинологические_данные_для_разреза_верхнего_мела_Алан_Кыр_Центральный_Крым"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_седиментологические_магнитостратиграфические_и_палинологические_данные_для_разреза_верхнего_мела_Алан_Кыр_Центральный_Крым">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АЮ_Гужиков"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГН_Александрова"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/novye-sedimentologicheskie-magnitostratigraficheskie-i-palinologicheskie-dannye-dlya-razreza-verhnego-mela-alan-kyr-tsentralnyy</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Академия_наук_СССР">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_осадочных_толщ_Якутии_сборник"/>
+</Авторы>
+
+<Книги rdf:about="#Стратиграфия_и_палинология_осадочных_толщ_Якутии_сборник">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Академия_наук_СССР"/>
+  <КнигаНаписанаАвтором rdf:resource="#Сибирское_отд_ние"/>
+  <КнигаНаписанаАвтором rdf:resource="#Якутский_филиал"/>
+  <КнигаНаписанаАвтором rdf:resource="#Ин_т_геологии"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=2PwLAQAAIAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAQQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Сибирское_отд_ние">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_осадочных_толщ_Якутии_сборник"/>
+</Авторы>
+
+<Авторы rdf:about="#Якутский_филиал">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_осадочных_толщ_Якутии_сборник"/>
+</Авторы>
+
+<Авторы rdf:about="#Ин_т_геологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_осадочных_толщ_Якутии_сборник"/>
+</Авторы>
+
+<Авторы rdf:about="#Андерсон_П_М">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Пространственная_и_временная_изменчивость_природной_среды_Берингии_в_четвертичный_период_международные_исследования"/>
+</Авторы>
+
+<Статьи rdf:about="#Пространственная_и_временная_изменчивость_природной_среды_Берингии_в_четвертичный_период_международные_исследования">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Андерсон_П_М"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ложкин_А_В"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2011</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">61</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/prostranstvennaya-i-vremennaya-izmenchivost-prirodnoy-sredy-beringii-v-chetvertichnyy-period-mezhdunarodnye-issledovaniya</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">191</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Ложкин_А_В">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Пространственная_и_временная_изменчивость_природной_среды_Берингии_в_четвертичный_период_международные_исследования"/>
+</Авторы>
+
+<Авторы rdf:about="#Андреичева_Л_Н">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Геологическое_строение_и_условия_формирования_отложений_квартера_на_северо_западе_России"/>
+  <АвторСтатьи rdf:resource="#Озерное_осадконакопление_в_позднем_неоплейстоцене_на_Европейском_Северо_Востоке_России"/>
+</Авторы>
+
+<Статьи rdf:about="#Геологическое_строение_и_условия_формирования_отложений_квартера_на_северо_западе_России">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Андреичева_Л_Н"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">57</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/geologicheskoe-stroenie-i-usloviya-formirovaniya-otlozheniy-kvartera-na-severo-zapade-rossii</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">550</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Озерное_осадконакопление_в_позднем_неоплейстоцене_на_Европейском_Северо_Востоке_России">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Андреичева_Л_Н"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Марченко_Вагапова_Т_И"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">56</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/ozernoe-osadkonakoplenie-v-pozdnem-neopleystotsene-na-evropeyskom-severo-vostoke-rossii</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">286</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Марченко_Вагапова_Т_И">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Озерное_осадконакопление_в_позднем_неоплейстоцене_на_Европейском_Северо_Востоке_России"/>
+</Авторы>
+
+<Авторы rdf:about="#Анна_Федоровна_Хлонова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_Сибири"/>
+  <АвторКниги rdf:resource="#Палинология_в_СССР_статьи_советских_палинологов_к_VII"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Анна_Федоровна_Хлонова"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=mX5OAQAAIAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAYQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Книги rdf:about="#Палинология_в_СССР_статьи_советских_палинологов_к_VII">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Анна_Федоровна_Хлонова"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=kbslAAAAMAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAMQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Анойкин_Антон_Александрович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Раннепалеолитические_индустрии_Приморского_Дагестана_по_материалам_памятника_Рубас"/>
+</Авторы>
+
+<Статьи rdf:about="#Раннепалеолитические_индустрии_Приморского_Дагестана_по_материалам_памятника_Рубас">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Анойкин_Антон_Александрович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Рыбалко_Андрей_Геннадьевич"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/rannepaleoliticheskie-industrii-primorskogo-dagestana-po-materialam-pamyatnika-rubas-1</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">180</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Рыбалко_Андрей_Геннадьевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Раннепалеолитические_индустрии_Приморского_Дагестана_по_материалам_памятника_Рубас"/>
+</Авторы>
+
+<Авторы rdf:about="#Аубекеров_Болат_Жагфарович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ГЕОАРХЕОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_АРХЕОЛОГИЧЕСКИХ_ОБЪЕКТОВ_В_ВЕРХОВЬЯХ_РЕКИ_ТУРГЕН_Северный_Тянь_Шань"/>
+</Авторы>
+
+<Статьи rdf:about="#ГЕОАРХЕОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_АРХЕОЛОГИЧЕСКИХ_ОБЪЕКТОВ_В_ВЕРХОВЬЯХ_РЕКИ_ТУРГЕН_Северный_Тянь_Шань">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Аубекеров_Болат_Жагфарович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Нигматова_Саида_Араповна"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/geoarheologicheskie-issledovaniya-arheologicheskih-obektov-v-verhovyah-reki-turgen-severnyy-tyan-shan</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">26</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Нигматова_Саида_Араповна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ГЕОАРХЕОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_АРХЕОЛОГИЧЕСКИХ_ОБЪЕКТОВ_В_ВЕРХОВЬЯХ_РЕКИ_ТУРГЕН_Северный_Тянь_Шань"/>
+  <АвторСтатьи rdf:resource="#ПРИРОДНО_КЛИМАТИЧЕСКИЕ_ФАКТОРЫ_РАЗВИТИЯ_ЗЕМЛЕДЕЛИЯ_ЮЖНОГО_КАЗАХСТАНА_В_СРЕДНИЕ_ВЕКА"/>
+</Авторы>
+
+<Статьи rdf:about="#ПРИРОДНО_КЛИМАТИЧЕСКИЕ_ФАКТОРЫ_РАЗВИТИЯ_ЗЕМЛЕДЕЛИЯ_ЮЖНОГО_КАЗАХСТАНА_В_СРЕДНИЕ_ВЕКА">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Нигматова_Саида_Араповна"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/prirodno-klimaticheskie-faktory-razvitiya-zemledeliya-yuzhnogo-kazahstana-v-srednie-veka</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Болиховская_Н_С">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ЭВОЛЮЦИЯ_ПРИРОДНЫХ_ОБСТАНОВОК_В_ИНТЕРВАЛЕ_ТЫС_Л_Н_ПО_ДАННЫМ_ПАЛИНОИ_ХРОНОСТРАТИГРАФИЧЕСКИХ_ИССЛЕДОВАНИЙ_ОТЛОЖЕНИЙ_ЮГО_ВОСТОЧНОГО_ПОБЕРЕЖЬЯ_ФИНСКОГО_ЗАЛИВА"/>
+</Авторы>
+
+<Статьи rdf:about="#ЭВОЛЮЦИЯ_ПРИРОДНЫХ_ОБСТАНОВОК_В_ИНТЕРВАЛЕ_ТЫС_Л_Н_ПО_ДАННЫМ_ПАЛИНОИ_ХРОНОСТРАТИГРАФИЧЕСКИХ_ИССЛЕДОВАНИЙ_ОТЛОЖЕНИЙ_ЮГО_ВОСТОЧНОГО_ПОБЕРЕЖЬЯ_ФИНСКОГО_ЗАЛИВА">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Болиховская_Н_С"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Молодьков_А_Н"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/evolyutsiya-prirodnyh-obstanovok-v-intervale-100-50-tys-l-n-po-dannym-palinoi-hronostratigraficheskih-issledovaniy-otlozheniy-yugo</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Молодьков_А_Н">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ЭВОЛЮЦИЯ_ПРИРОДНЫХ_ОБСТАНОВОК_В_ИНТЕРВАЛЕ_ТЫС_Л_Н_ПО_ДАННЫМ_ПАЛИНОИ_ХРОНОСТРАТИГРАФИЧЕСКИХ_ИССЛЕДОВАНИЙ_ОТЛОЖЕНИЙ_ЮГО_ВОСТОЧНОГО_ПОБЕРЕЖЬЯ_ФИНСКОГО_ЗАЛИВА"/>
+</Авторы>
+
+<Авторы rdf:about="#Болиховская_Наталия_Степановна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Болиховская_Наталия_Степановна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Козликин_Максим_Борисович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Шуньков_Михаил_Васильевич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ульянов_Владимир_Александрович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Фаустов_Станислав_Степанович"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">39</dowloadsArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/novye-dannye-v-palinologii-unikalnogo-pamyatnika-paleolita-denisova-peschera-na-severo-zapade-altaya</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">180</viewsArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Козликин_Максим_Борисович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Шуньков_Михаил_Васильевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Ульянов_Владимир_Александрович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Фаустов_Станислав_Степанович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_в_палинологии_уникального_памятника_палеолита_Денисова_пещера_на_северо_западе_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Болотский_Ю_Л">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Динозавры_и_среда_их_обитания_в_конце_мелового_периода_Зейско_Буреинский_бассейн_Российский_Дальний_Восток"/>
+</Авторы>
+
+<Статьи rdf:about="#Динозавры_и_среда_их_обитания_в_конце_мелового_периода_Зейско_Буреинский_бассейн_Российский_Дальний_Восток">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Болотский_Ю_Л"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Бугдаева_Е_В"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Маркевич_В_С"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">158</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/dinozavry-i-sreda-ih-obitaniya-v-kontse-melovogo-perioda-zeysko-bureinskiy-basseyn-rossiyskiy-dalniy-vostok</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">294</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Бугдаева_Е_В">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Динозавры_и_среда_их_обитания_в_конце_мелового_периода_Зейско_Буреинский_бассейн_Российский_Дальний_Восток"/>
+</Авторы>
+
+<Авторы rdf:about="#Маркевич_В_С">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Динозавры_и_среда_их_обитания_в_конце_мелового_периода_Зейско_Буреинский_бассейн_Российский_Дальний_Восток"/>
+</Авторы>
+
+<Авторы rdf:about="#Бородатый_Игорь_Леонтьевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Пахомов_Михаил_Михайлович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Прокашев_Алексей_Михайлович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Пахомова_Ольга_Михайловна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Охорзин_Николай_Дмитриевич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Бородатый_Игорь_Леонтьевич"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/palinologiya-usloviya-formirovaniya-i-vozrast-otlozheniy-shabarshatskogo-opornogo-razreza-verhnekamskoy-vozvyshennosti</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">141</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Пахомов_Михаил_Михайлович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности"/>
+</Авторы>
+
+<Авторы rdf:about="#Прокашев_Алексей_Михайлович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности"/>
+</Авторы>
+
+<Авторы rdf:about="#Пахомова_Ольга_Михайловна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности"/>
+</Авторы>
+
+<Авторы rdf:about="#Охорзин_Николай_Дмитриевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_условия_формирования_и_возраст_отложений_Шабаршатского_опорного_разреза_Верхнекамской_возвышенности"/>
+</Авторы>
+
+<Авторы rdf:about="#Буравская_М_Н">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Расчленение_старичных_отложений_в_обнажении_Седкыркещ_среднее_течение_Р_Вычегды_по_результатам_комплексного_анализа"/>
+  <АвторСтатьи rdf:resource="#Фациально_генетическое_расчленение_современного_аллювия_в_нижнем_течении_Р_Куи_на_Северо_Западе_Большеземельской_тундры"/>
+  <АвторСтатьи rdf:resource="#Особенности_палеогеографических_условий_аллювиального_осадконакопления_в_голоцене_юго_западная_часть_Тимано_Печоро_Вычегодского_региона"/>
+</Авторы>
+
+<Статьи rdf:about="#Расчленение_старичных_отложений_в_обнажении_Седкыркещ_среднее_течение_Р_Вычегды_по_результатам_комплексного_анализа">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Буравская_М_Н"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Голубева_Ю_В"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Марченко_вагапова_Т_И"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">39</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/raschlenenie-starichnyh-otlozheniy-v-obnazhenii-sedkyrkesch-srednee-techenie-r-vychegdy-po-rezultatam-kompleksnogo-analiza</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">177</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Фациально_генетическое_расчленение_современного_аллювия_в_нижнем_течении_Р_Куи_на_Северо_Западе_Большеземельской_тундры">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Буравская_М_Н"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Голубева_Ю_В"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/fatsialno-geneticheskoe-raschlenenie-sovremennogo-allyuviya-v-nizhnem-techenii-r-kui-na-severo-zapade-bolshezemelskoy-tundry</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Особенности_палеогеографических_условий_аллювиального_осадконакопления_в_голоцене_юго_западная_часть_Тимано_Печоро_Вычегодского_региона">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Буравская_М_Н"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Голубева_Ю_В"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">26</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/osobennosti-paleogeograficheskih-usloviy-allyuvialnogo-osadkonakopleniya-v-golotsene-yugo-zapadnaya-chast-timano-pechoro</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">169</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Голубева_Ю_В">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Расчленение_старичных_отложений_в_обнажении_Седкыркещ_среднее_течение_Р_Вычегды_по_результатам_комплексного_анализа"/>
+  <АвторСтатьи rdf:resource="#Фациально_генетическое_расчленение_современного_аллювия_в_нижнем_течении_Р_Куи_на_Северо_Западе_Большеземельской_тундры"/>
+  <АвторСтатьи rdf:resource="#Особенности_палеогеографических_условий_аллювиального_осадконакопления_в_голоцене_юго_западная_часть_Тимано_Печоро_Вычегодского_региона"/>
+</Авторы>
+
+<Авторы rdf:about="#Марченко_вагапова_Т_И">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Расчленение_старичных_отложений_в_обнажении_Седкыркещ_среднее_течение_Р_Вычегды_по_результатам_комплексного_анализа"/>
+</Авторы>
+
+<Авторы rdf:about="#ВВ_Полъшин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Закономерности_литохимии_и_палинологии_современных_донных_отложений_Азовского_моря"/>
+</Авторы>
+
+<Статьи rdf:about="#Закономерности_литохимии_и_палинологии_современных_донных_отложений_Азовского_моря">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГГ_Матишов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВВ_Полъшин"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГВ_Ильин"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=12884527</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ВЮ_Обуховская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Седиментологические_и_биотические_события_в_девоне_на_территории_Жлобинской_седловины_и_Северо_Припятского_плеча_и_их_палинологические"/>
+</Авторы>
+
+<Статьи rdf:about="#Седиментологические_и_биотические_события_в_девоне_на_территории_Жлобинской_седловины_и_Северо_Припятского_плеча_и_их_палинологические">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВЮ_Обуховская"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТГ_Обуховская"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СА_Кручек"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://lithosphere.by/wp-content/uploads/2018/01/31_46_Obuhovskaja_Obuhovsk_Kruchiek.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Владимир_Поликарпович_Гричук">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_плейстоцена_и_плиоцена_труды_III_Международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_плейстоцена_и_плиоцена_труды_III_Международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Владимир_Поликарпович_Гричук"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=vNfDAQAACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAgQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Волкова_В_С">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_кайнозоя_в_Сибири"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_кайнозоя_в_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Волкова_В_С"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=spPnIObs0KYC&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgHEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Вязов_Леонид_Александрович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Международный_научно_практический_семинар_по_применению_палеоэкологических_методов_в_археологии_болгар_августа_г"/>
+</Авторы>
+
+<Статьи rdf:about="#Международный_научно_практический_семинар_по_применению_палеоэкологических_методов_в_археологии_болгар_августа_г">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ситдиков_Айрат_Габитович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Вязов_Леонид_Александрович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Пономаренко_Елена_Викторовна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Родинкова_Власта_Евгеньевна"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">59</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/mezhdunarodnyy-nauchno-prakticheskiy-seminar-po-primeneniyu-paleoekologicheskih-metodov-v-arheologii-bolgar-9-19-avgusta-2016-g</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">190</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Ситдиков_Айрат_Габитович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Международный_научно_практический_семинар_по_применению_палеоэкологических_методов_в_археологии_болгар_августа_г"/>
+</Авторы>
+
+<Авторы rdf:about="#Пономаренко_Елена_Викторовна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Международный_научно_практический_семинар_по_применению_палеоэкологических_методов_в_археологии_болгар_августа_г"/>
+</Авторы>
+
+<Авторы rdf:about="#Родинкова_Власта_Евгеньевна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Международный_научно_практический_семинар_по_применению_палеоэкологических_методов_в_археологии_болгар_августа_г"/>
+</Авторы>
+
+<Авторы rdf:about="#Г_И_Ненашева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_характеристика_медов_Алтайского_края"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологическая_характеристика_медов_Алтайского_края">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Г_И_Ненашева"/>
+  <СтатьяНаписанаАвтором rdf:resource="#М_С_Иванова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Н_С_Малыгина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Т_М_Копытина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/palinologicheskaya-harakteristika-medov-altayskogo-kraya</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">59</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#М_С_Иванова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_характеристика_медов_Алтайского_края"/>
+</Авторы>
+
+<Авторы rdf:about="#Н_С_Малыгина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_характеристика_медов_Алтайского_края"/>
+</Авторы>
+
+<Авторы rdf:about="#Т_М_Копытина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_характеристика_медов_Алтайского_края"/>
+</Авторы>
+
+<Авторы rdf:about="#ГВ_Ильин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Закономерности_литохимии_и_палинологии_современных_донных_отложений_Азовского_моря"/>
+</Авторы>
+
+<Авторы rdf:about="#ГГ_Матишов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Закономерности_литохимии_и_палинологии_современных_донных_отложений_Азовского_моря"/>
+</Авторы>
+
+<Авторы rdf:about="#ГМ_Братцева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинологические_исследования_верхнего_мела_и_палеогена_Дальнего_Востока_Труды_Геологический_институт_Академии_наук_СССР_Выпуск"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Книги rdf:about="#Палинологические_исследования_верхнего_мела_и_палеогена_Дальнего_Востока_Труды_Геологический_институт_Академии_наук_СССР_Выпуск">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#ГМ_Братцева"/>
+  <КнигаНаписанаПро rdf:resource="#палинология"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1969</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <dowloadsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsBook>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</numberOfCitationsArticle>
+  <numberOfCitationsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</numberOfCitationsBook>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.google.com/books?hl=ru&amp;lr=&amp;id=k3k7ls7AIjUC&amp;oi=fnd&amp;pg=PP1&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;ots=JY63a0QIRp&amp;sig=_HhtQZyzytj4Xw0OBy9YTzrOY2M</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+  <viewsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsBook>
+</Книги>
+
+<Авторы rdf:about="#ГН_Александрова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_седиментологические_магнитостратиграфические_и_палинологические_данные_для_разреза_верхнего_мела_Алан_Кыр_Центральный_Крым"/>
+</Авторы>
+
+<Авторы rdf:about="#Гоманьков_А_В">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Морфология_и_ультраструктура_пыльцевых_зерен_Scutasporites_nanuki_Utting_Sashiniaceae_Coniferales_из_пермских_отложений_Восточно_Европейской_платформы"/>
+</Авторы>
+
+<Статьи rdf:about="#Морфология_и_ультраструктура_пыльцевых_зерен_Scutasporites_nanuki_Utting_Sashiniaceae_Coniferales_из_пермских_отложений_Восточно_Европейской_платформы">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Гоманьков_А_В"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Тарасевич_В_Ф"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/morfologiya-i-ultrastruktura-pyltsevyh-zeren-scutasporites-nanuki-utting-sashiniaceae-coniferales-iz-permskih-otlozheniy-vostochno</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Тарасевич_В_Ф">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Морфология_и_ультраструктура_пыльцевых_зерен_Scutasporites_nanuki_Utting_Sashiniaceae_Coniferales_из_пермских_отложений_Восточно_Европейской_платформы"/>
+</Авторы>
+
+<Авторы rdf:about="#ДА_Мамонтов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#Дарья_Анатольевна_Морозова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Тератоморфизм_пыльцы_Syringa_josikaea_Jacq_При_интродукции_на_урбанизированных_территориях_Российской_Арктики"/>
+</Авторы>
+
+<Статьи rdf:about="#Тератоморфизм_пыльцы_Syringa_josikaea_Jacq_При_интродукции_на_урбанизированных_территориях_Российской_Арктики">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Наталья_Владимировна_Василевская"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Дарья_Анатольевна_Морозова"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">36</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/teratomorfizm-pyltsy-syringa-josikaea-jacq-pri-introduktsii-na-urbanizirovannyh-territoriyah-rossiyskoy-arktiki</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">182</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Наталья_Владимировна_Василевская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Тератоморфизм_пыльцы_Syringa_josikaea_Jacq_При_интродукции_на_урбанизированных_территориях_Российской_Арктики"/>
+</Авторы>
+
+<Авторы rdf:about="#Дерягин_Владимир_Владиславович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкция_условий_осадконакопления_в_озере_талкас_южный_Урал_в_голоцене"/>
+</Авторы>
+
+<Статьи rdf:about="#Реконструкция_условий_осадконакопления_в_озере_талкас_южный_Урал_в_голоцене">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Масленникова_Анна_Валерьевна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Дерягин_Владимир_Владиславович"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/rekonstruktsiya-usloviy-osadkonakopleniya-v-ozere-talkas-yuzhnyy-ural-v-golotsene</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">66</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Масленникова_Анна_Валерьевна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкция_условий_осадконакопления_в_озере_талкас_южный_Урал_в_голоцене"/>
+</Авторы>
+
+<Авторы rdf:about="#Дзюба_Ольга_Федоровна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкции_природных_обстановок_ландшафтов_средне_и_позднеголоценового_времени_на_основе_комплексного_использования_палинологического_и_геохимического_методов"/>
+</Авторы>
+
+<Статьи rdf:about="#Реконструкции_природных_обстановок_ландшафтов_средне_и_позднеголоценового_времени_на_основе_комплексного_использования_палинологического_и_геохимического_методов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Кочубей_Ольга_Владимировна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Марков_Владимир_Евгеньевич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Дзюба_Ольга_Федоровна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Нестеров_Евгений_Михайлович"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">61</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/rekonstruktsii-prirodnyh-obstanovok-landshaftov-sredne-i-pozdnegolotsenovogo-vremeni-na-osnove-kompleksnogo-ispolzovaniya</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">154</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Кочубей_Ольга_Владимировна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкции_природных_обстановок_ландшафтов_средне_и_позднеголоценового_времени_на_основе_комплексного_использования_палинологического_и_геохимического_методов"/>
+</Авторы>
+
+<Авторы rdf:about="#Марков_Владимир_Евгеньевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкции_природных_обстановок_ландшафтов_средне_и_позднеголоценового_времени_на_основе_комплексного_использования_палинологического_и_геохимического_методов"/>
+</Авторы>
+
+<Авторы rdf:about="#Нестеров_Евгений_Михайлович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Реконструкции_природных_обстановок_ландшафтов_средне_и_позднеголоценового_времени_на_основе_комплексного_использования_палинологического_и_геохимического_методов"/>
+</Авторы>
+
+<Авторы rdf:about="#Дорохова_Т_В">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Отражение_событий_голоцена_в_спорово_пыльцевых_спектрах_торфяных_отложений_южной_части_Калининградской_области"/>
+</Авторы>
+
+<Статьи rdf:about="#Отражение_событий_голоцена_в_спорово_пыльцевых_спектрах_торфяных_отложений_южной_части_Калининградской_области">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Напреенко_М_Г"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Дорохова_Т_В"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">47</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/otrazhenie-sobytiy-golotsena-v-sporovo-pyltsevyh-spektrah-torfyanyh-otlozheniy-yuzhnoy-chasti-kaliningradskoy-oblasti</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">211</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Напреенко_М_Г">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Отражение_событий_голоцена_в_спорово_пыльцевых_спектрах_торфяных_отложений_южной_части_Калининградской_области"/>
+</Авторы>
+
+<Авторы rdf:about="#ЕА_Козлов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Информационные_технологии_в_палинологии"/>
+</Авторы>
+
+<Статьи rdf:about="#Информационные_технологии_в_палинологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЯК_Еловичева"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕА_Козлов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НМ_Писарчук"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elib.bsu.by/bitstream/123456789/112154/1/Informatizatsia_obrazovania_2010.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ЕА_Спиридонова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Результаты_палинологических_исследований_в_пойме_реки_Москвы_у_поселка_РАНИС"/>
+  <АвторСтатьи rdf:resource="#Природная_среда_окрестностей_Болгарского_городища_по_материалам_палинологических_исследований_культурного_слоя_раскопа_CLXXIX"/>
+</Авторы>
+
+<Авторы rdf:about="#ЕБ_Пещевицкая">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_по_разрезу_Кашпир_Русская_платформа"/>
+</Авторы>
+
+<Авторы rdf:about="#ЕГ_Ершова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_на_Соборной_горе_в_Смоленске"/>
+</Авторы>
+
+<Статьи rdf:about="#Археолого_палинологические_исследования_на_Соборной_горе_в_Смоленске">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕГ_Ершова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НА_Кренке"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=28848598</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ЕФ_Марковская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Опыт_палинологических_исследований_воздушной_среды_городов_таежной_зоны"/>
+</Авторы>
+
+<Статьи rdf:about="#Опыт_палинологических_исследований_воздушной_среды_городов_таежной_зоны">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НА_Елькина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЕФ_Марковская"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2007</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/16565631</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Елена_Дмитриевна_Заклинская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_кайнофита_Труды_ей_международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_кайнофита_Труды_ей_международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Елена_Дмитриевна_Заклинская"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=B3pvzgEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAAQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Ершова_Екатерина_Георгиевна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Изучение_природных_и_культурных_ландшафтов_железного_века_в_долине_Москвы_реки_методами_палинологии_и_археологии"/>
+</Авторы>
+
+<Статьи rdf:about="#Изучение_природных_и_культурных_ландшафтов_железного_века_в_долине_Москвы_реки_методами_палинологии_и_археологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ершова_Екатерина_Георгиевна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Кренке_Николай_Александрович"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">190</dowloadsArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/izuchenie-prirodnyh-i-kulturnyh-landshaftov-zheleznogo-veka-v-doline-moskvy-reki-metodami-palinologii-i-arheologii</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">463</viewsArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Кренке_Николай_Александрович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Изучение_природных_и_культурных_ландшафтов_железного_века_в_долине_Москвы_реки_методами_палинологии_и_археологии"/>
+</Авторы>
+
+<Авторы rdf:about="#Жамангара_Айжан_Кашаганкызы">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ХРАНИТЕЛЬ_ДИНАСТИИ_ПАЛИНОЛОГОВ"/>
+</Авторы>
+
+<Статьи rdf:about="#ХРАНИТЕЛЬ_ДИНАСТИИ_ПАЛИНОЛОГОВ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Жамангара_Айжан_Кашаганкызы"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/hranitel-dinastii-palinologov</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">39</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ИГИРГИ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_в_биостратиграфии_палеоэкологии_и"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_в_биостратиграфии_палеоэкологии_и">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#ИГИРГИ"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=yAC-wwEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAUQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Изд_во_Ростовского_университета">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_Нижнего_Дона_и_Северного_Кавказа_к_III"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_Нижнего_Дона_и_Северного_Кавказа_к_III">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Изд_во_Ростовского_университета"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=uoVOAQAAIAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAIQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Ильина_Вера_Ивановна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_юры_Сибири_Jurassic_palynology_of_Siberia"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_юры_Сибири_Jurassic_palynology_of_Siberia">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Ильина_Вера_Ивановна"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=1ZE_CgAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgCEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Институт_географии_Russie">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_плейстоцена_и_плиоцена_Труды_международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_плейстоцена_и_плиоцена_Труды_международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Институт_географии_Russie"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=rYtLNAAACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAkQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#К_Я_Спрингис">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_в_геологических_исследованиях_Прибалтики"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_в_геологических_исследованиях_Прибалтики">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#К_Я_Спрингис"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=J7l5AgAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgIEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#КВ_Кременецкий">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Ландшафтно_климатические_изменения_в_Западной_Сибири_в_позднеледниковье_и_голоцене_в_свете_новых_палинологических_данных"/>
+</Авторы>
+
+<Статьи rdf:about="#Ландшафтно_климатические_изменения_в_Западной_Сибири_в_позднеледниковье_и_голоцене_в_свете_новых_палинологических_данных">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ОК_Борисова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЭМ_Зеликсон"/>
+  <СтатьяНаписанаАвтором rdf:resource="#КВ_Кременецкий"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2005</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=9195247</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Калис_А">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Archaeopalynological_investigations_in_the_Trans_Ural"/>
+</Авторы>
+
+<Статьи rdf:about="#Archaeopalynological_investigations_in_the_Trans_Ural">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Калис_А"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Штоббе_А"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/archaeopalynological-investigations-in-the-trans-ural</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">42</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Штоббе_А">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Archaeopalynological_investigations_in_the_Trans_Ural"/>
+</Авторы>
+
+<Авторы rdf:about="#Кира_Васильевна_Виноградова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Стратиграфия_и_палинология_юрских_нефтегазоносных_отложений"/>
+</Авторы>
+
+<Книги rdf:about="#Стратиграфия_и_палинология_юрских_нефтегазоносных_отложений">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Кира_Васильевна_Виноградова"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=-csRAQAAMAAJ&amp;q=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAIQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Кузьмина_Ольга_Борисовна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#РАЗРЕЗЫ_ВЕРХНЕГО_НЕОПЛЕЙСТОЦЕНА_ПРИТЕЛЕЦКОГО_РАЙОНА_ГОРНОГО_АЛТАЯ_ЛИТОЛОГИЯ_ПАЛИНОЛОГИЯ_МИКРОФАУНА"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_и_микропалеонтологическая_характеристика_кайнозойских_отложений_вскрытых_скв_в_Уймонской_котловине_Горного_Алтая"/>
+</Авторы>
+
+<Статьи rdf:about="#РАЗРЕЗЫ_ВЕРХНЕГО_НЕОПЛЕЙСТОЦЕНА_ПРИТЕЛЕЦКОГО_РАЙОНА_ГОРНОГО_АЛТАЯ_ЛИТОЛОГИЯ_ПАЛИНОЛОГИЯ_МИКРОФАУНА">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Хазина_Ирина_Владимировна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Русанов_Геннадий_Григорьевич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Кузьмина_Ольга_Борисовна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Хазин_Леонид_Борисович"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/razrezy-verhnego-neopleystotsena-priteletskogo-rayona-gornogo-altaya-litologiya-palinologiya-mikrofauna</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Палинологическая_и_микропалеонтологическая_характеристика_кайнозойских_отложений_вскрытых_скв_в_Уймонской_котловине_Горного_Алтая">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Хазина_Ирина_Владимировна"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Русанов_Геннадий_Григорьевич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Хазин_Леонид_Борисович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Кузьмина_Ольга_Борисовна"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/palinologicheskaya-i-mikropaleontologicheskaya-harakteristika-kaynozoyskih-otlozheniy-vskrytyh-skv-1-v-uymonskoy-kotlovine-gornogo</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">125</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Хазина_Ирина_Владимировна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#РАЗРЕЗЫ_ВЕРХНЕГО_НЕОПЛЕЙСТОЦЕНА_ПРИТЕЛЕЦКОГО_РАЙОНА_ГОРНОГО_АЛТАЯ_ЛИТОЛОГИЯ_ПАЛИНОЛОГИЯ_МИКРОФАУНА"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_и_микропалеонтологическая_характеристика_кайнозойских_отложений_вскрытых_скв_в_Уймонской_котловине_Горного_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Русанов_Геннадий_Григорьевич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#РАЗРЕЗЫ_ВЕРХНЕГО_НЕОПЛЕЙСТОЦЕНА_ПРИТЕЛЕЦКОГО_РАЙОНА_ГОРНОГО_АЛТАЯ_ЛИТОЛОГИЯ_ПАЛИНОЛОГИЯ_МИКРОФАУНА"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_и_микропалеонтологическая_характеристика_кайнозойских_отложений_вскрытых_скв_в_Уймонской_котловине_Горного_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Хазин_Леонид_Борисович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#РАЗРЕЗЫ_ВЕРХНЕГО_НЕОПЛЕЙСТОЦЕНА_ПРИТЕЛЕЦКОГО_РАЙОНА_ГОРНОГО_АЛТАЯ_ЛИТОЛОГИЯ_ПАЛИНОЛОГИЯ_МИКРОФАУНА"/>
+  <АвторСтатьи rdf:resource="#Палинологическая_и_микропалеонтологическая_характеристика_кайнозойских_отложений_вскрытых_скв_в_Уймонской_котловине_Горного_Алтая"/>
+</Авторы>
+
+<Авторы rdf:about="#Лаврушин_Ю_А">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Природные_предпосылки_возникновения_позднепалеолитического_центра_на_Дону_в_С_Костенки"/>
+</Авторы>
+
+<Статьи rdf:about="#Природные_предпосылки_возникновения_позднепалеолитического_центра_на_Дону_в_С_Костенки">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Лаврушин_Ю_А"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Спиридонова_Е_А"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">62</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/prirodnye-predposylki-vozniknoveniya-pozdnepaleoliticheskogo-tsentra-na-donu-v-s-kostenki</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">305</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Спиридонова_Е_А">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Природные_предпосылки_возникновения_позднепалеолитического_центра_на_Дону_в_С_Костенки"/>
+</Авторы>
+
+<Авторы rdf:about="#Лариса_Линкина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Неоген_Среднего_Поволжья_Палинология_и_стратиграфия"/>
+</Авторы>
+
+<Книги rdf:about="#Неоген_Среднего_Поволжья_Палинология_и_стратиграфия">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Лариса_Линкина"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=8_UBmgEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAcQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Ложкин_Анатолий_Владимирович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Ушковская_стоянка_уникальный_археологический_памятник_Севера_Дальнего_Востока"/>
+</Авторы>
+
+<Статьи rdf:about="#Ушковская_стоянка_уникальный_археологический_памятник_Севера_Дальнего_Востока">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ложкин_Анатолий_Владимирович"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Слободин_Сергей_Борисович"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">365</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/ushkovskaya-stoyanka-unikalnyy-arheologicheskiy-pamyatnik-severa-dalnego-vostoka</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1073</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Слободин_Сергей_Борисович">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Ушковская_стоянка_уникальный_археологический_памятник_Севера_Дальнего_Востока"/>
+</Авторы>
+
+<Авторы rdf:about="#М_И_Нейштадт">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#М_М_Одинцова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_раннего_мезозоя_Сибирской_платформы"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_раннего_мезозоя_Сибирской_платформы">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#М_М_Одинцова"/>
+  <КнигаНаписанаПро rdf:resource="#палинология"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <dowloadsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsBook>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <numberOfCitationsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</numberOfCitationsBook>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=FqmvmlPVT9QC&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgFEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+  <viewsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsBook>
+</Книги>
+
+<Авторы rdf:about="#МА_Ахметьев">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Средний_и_верхний_эоцен_Омского_прогиба_Западно_Сибирская_плита_палинологические_стратиграфические_гидрологические_и_климатические_аспекты"/>
+</Авторы>
+
+<Статьи rdf:about="#Средний_и_верхний_эоцен_Омского_прогиба_Западно_Сибирская_плита_палинологические_стратиграфические_гидрологические_и_климатические_аспекты">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НИ_Запорожец"/>
+  <СтатьяНаписанаАвтором rdf:resource="#МА_Ахметьев"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=18448330</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#МБ_Козликин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#ММ_Одинцова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#МР_Павлова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_и_радиоуглеродные_данные_о_верхнечетвертичных_отложениях_дюнного_массива_тукулан_Кысыл_Сырский_Центральная_Якутия"/>
+</Авторы>
+
+<Авторы rdf:about="#НА_Елькина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Опыт_палинологических_исследований_воздушной_среды_городов_таежной_зоны"/>
+</Авторы>
+
+<Авторы rdf:about="#НА_Кренке">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_на_Соборной_горе_в_Смоленске"/>
+</Авторы>
+
+<Авторы rdf:about="#НА_Рудая">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_и_радиоуглеродные_данные_о_верхнечетвертичных_отложениях_дюнного_массива_тукулан_Кысыл_Сырский_Центральная_Якутия"/>
+  <АвторСтатьи rdf:resource="#Опыт_комплексного_использования_геохимических_особенностей_донных_отложений_и_палинологических_записей_для_палеоклиматических_реконструкций_на"/>
+</Авторы>
+
+<Авторы rdf:about="#НЕ_Зарецкая">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_по_палинологии_геохронологии_и_стратиграфии_озерно_болотных_отложений_на_Среднем_Урале"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_данные_по_палинологии_геохронологии_и_стратиграфии_озерно_болотных_отложений_на_Среднем_Урале">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НК_Панова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТГ_Антипина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НЕ_Зарецкая"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=25748553</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#НЕ_Рябогина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_и_палеопочвенные_исследования_на_археологических_памятниках_анализ_возможностей_и_методика_работ"/>
+</Авторы>
+
+<Авторы rdf:about="#НИ_Запорожец">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Средний_и_верхний_эоцен_Омского_прогиба_Западно_Сибирская_плита_палинологические_стратиграфические_гидрологические_и_климатические_аспекты"/>
+</Авторы>
+
+<Авторы rdf:about="#НК_Панова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_по_палинологии_геохронологии_и_стратиграфии_озерно_болотных_отложений_на_Среднем_Урале"/>
+</Авторы>
+
+<Авторы rdf:about="#НМ_Писарчук">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Информационные_технологии_в_палинологии"/>
+  <АвторСтатьи rdf:resource="#Использование_ГИС_технологий_в_палинологии"/>
+</Авторы>
+
+<Статьи rdf:about="#Использование_ГИС_технологий_в_палинологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НМ_Писарчук"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЯК_Еловичева"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elib.bsu.by/handle/123456789/236445</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#НС_Болиховская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#НЮ_Филиппова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология_верхнего_плиоцена_среднего_плейстоцена_юга_Каспийской_области"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_верхнего_плиоцена_среднего_плейстоцена_юга_Каспийской_области">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НЮ_Филиппова"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1997</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.rfbr.ru/rffi/portal/books/o_58994</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Наука">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_в_медицине_труды_III_международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_в_медицине_труды_III_международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Наука"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=_GDftAEACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAkQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#ОА_Орлова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#ОВ_Кочубей">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_исследования_в_практике_инженерно_экологических_изысканий"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологические_исследования_в_практике_инженерно_экологических_изысканий">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ОФ_Дзюба"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ОВ_Кочубей"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СВ_Федосеева"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.ngtp.ru/rub/7/24_2013.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ОК_Борисова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Ландшафтно_климатические_изменения_в_Западной_Сибири_в_позднеледниковье_и_голоцене_в_свете_новых_палинологических_данных"/>
+</Авторы>
+
+<Авторы rdf:about="#ОФ_Дзюба">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_исследования_в_практике_инженерно_экологических_изысканий"/>
+</Авторы>
+
+<Авторы rdf:about="#РА_Вайкмяэ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Изотопия_палинология_и_гидрохимия_повторно_жильных_льдов_органо_минерального_комплекса_Дуванный_Яр"/>
+</Авторы>
+
+<Статьи rdf:about="#Изотопия_палинология_и_гидрохимия_повторно_жильных_льдов_органо_минерального_комплекса_Дуванный_Яр">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЮК_Васильчук"/>
+  <СтатьяНаписанаАвтором rdf:resource="#РА_Вайкмяэ"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЯМ_Пуннинг"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1987</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=27294008</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#РГ_Курманов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#Российская_академия_НАУК_палеонтологический_институт">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_теория_и_практика"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_теория_и_практика">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Российская_академия_НАУК_палеонтологический_институт"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=LuugPwAACAAJ&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwjf5Man8pX1AhVTnGoFHUXdC2o4FBDoAXoECAEQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#С_А_Сафарова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_голоцена_и_маринопалинология_Труды_III"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_голоцена_и_маринопалинология_Труды_III">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#С_А_Сафарова"/>
+  <КнигаНаписанаПро rdf:resource="#палинология"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <dowloadsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsBook>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <numberOfCitationsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsBook>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=HUFzAgAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAgQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+  <viewsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsBook>
+</Книги>
+
+<Авторы rdf:about="#СА_Кручек">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Седиментологические_и_биотические_события_в_девоне_на_территории_Жлобинской_седловины_и_Северо_Припятского_плеча_и_их_палинологические"/>
+</Авторы>
+
+<Авторы rdf:about="#СВ_Жеглов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#ПАЛИНОЛОГИЯ"/>
+</Авторы>
+
+<Статьи rdf:about="#ПАЛИНОЛОГИЯ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СВ_Жеглов"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.rsu.edu.ru/wp-content/uploads/opop-auto/2021/096_44.03.01_%D0%9F%D0%B5%D0%B4%D0%B0%D0%B3%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)_%D0%97%D0%A4%D0%9E/rpd096/%D0%911.%D0%92.%D0%94%D0%92.01.01_%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#СВ_Федосеева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинологические_исследования_в_практике_инженерно_экологических_изысканий"/>
+</Авторы>
+
+<Авторы rdf:about="#Самойлович_С_Р">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_в_нефтяной_геологии_К_III_Международной"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_в_нефтяной_геологии_К_III_Международной">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Самойлович_С_Р"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=RetgAQAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgGEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#Т_Д_Бартош">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_в_континентальных_и_морских_геологических"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_в_континентальных_и_морских_геологических">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Т_Д_Бартош"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=5q91AgAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgDEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#ТВ_Сапелко">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология_позднепалеолитических_памятников_Десны"/>
+  <АвторСтатьи rdf:resource="#Палинологические_реконструкции_разрезов_среднего_и_позднего_голоцена_побережья_Баренцева_моря"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_позднепалеолитических_памятников_Десны">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТВ_Сапелко"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://dspace.nbuv.gov.ua/bitstream/handle/123456789/171412/08-Sapelko.pdf?sequence=1</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ТГ_Антипина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Новые_данные_по_палинологии_геохронологии_и_стратиграфии_озерно_болотных_отложений_на_Среднем_Урале"/>
+</Авторы>
+
+<Авторы rdf:about="#ТГ_Обуховская">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Седиментологические_и_биотические_события_в_девоне_на_территории_Жлобинской_седловины_и_Северо_Припятского_плеча_и_их_палинологические"/>
+</Авторы>
+
+<Авторы rdf:about="#Тельнова_О_П">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа_Часть_II"/>
+  <АвторСтатьи rdf:resource="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа"/>
+</Авторы>
+
+<Статьи rdf:about="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа_Часть_II">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Шумилов_И_Х"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Тельнова_О_П"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">41</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/metodika-obrabotki-uglisto-glinistyh-devonskih-porod-dlya-palinologicheskogo-analiza-chast-ii</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">183</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Шумилов_И_Х"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Тельнова_О_П"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CyberLeninka</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">59</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru//article/n/metodika-obrabotki-uglisto-glinistyh-devonskih-porod-dlya-palinologicheskogo-analiza</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#Шумилов_И_Х">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа_Часть_II"/>
+  <АвторСтатьи rdf:resource="#Методика_обработки_углисто_глинистых_девонских_пород_для_палинологического_анализа"/>
+</Авторы>
+
+<Авторы rdf:about="#Хлонова_А_Ф">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_Сибири_К_II_й_Международной_палинологической"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_Сибири_К_II_й_Международной_палинологической">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#Хлонова_А_Ф"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=Na8-CgAAQBAJ&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgBEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#ЭМ_Зеликсон">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Ландшафтно_климатические_изменения_в_Западной_Сибири_в_позднеледниковье_и_голоцене_в_свете_новых_палинологических_данных"/>
+</Авторы>
+
+<Авторы rdf:about="#ЮИ_Ростовцева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#ЮК_Васильчук">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_и_хронология_полигонально_жильных_комплексов_в_криолитозоне_России"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Изотопия_палинология_и_гидрохимия_повторно_жильных_льдов_органо_минерального_комплекса_Дуванный_Яр"/>
+</Авторы>
+
+<Авторы rdf:about="#ЯК_Еловичева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Палинология_Беларуси"/>
+  <АвторСтатьи rdf:resource="#Информационные_технологии_в_палинологии"/>
+  <АвторСтатьи rdf:resource="#Использование_ГИС_технологий_в_палинологии"/>
+  <АвторСтатьи rdf:resource="#Основы_палинологии"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_Беларуси">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЯК_Еловичева"/>
+  <СтатьяНаписанаПро rdf:resource="#палинология"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=42408188</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ЯМ_Пуннинг">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+  <АвторСтатьи rdf:resource="#Изотопия_палинология_и_гидрохимия_повторно_жильных_льдов_органо_минерального_комплекса_Дуванный_Яр"/>
+</Авторы>
+
+<Авторы rdf:about="#авторы1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторПисалПро rdf:resource="#палинология"/>
+</Авторы>
+
+<Авторы rdf:about="#авторы2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_меловых_отложений_Сибири_и_Дальнего_Востока">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#авторы3"/>
+  <КнигаНаписанаПро rdf:resource="#палинология"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <dowloadsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsBook>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <numberOfCitationsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</numberOfCitationsBook>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=AIVlBjvebMsC&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwiht4SX8pX1AhW8lWoFHZSvCHYQ6AF6BAgEEAE</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+  <viewsBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsBook>
+</Книги>
+
+<Авторы rdf:about="#авторы3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_меловых_отложений_Сибири_и_Дальнего_Востока"/>
+</Авторы>
+
+<Книги rdf:about="#Палинология_Казахстана_К_IV_Международной_палинологической">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <КнигаНаписанаАвтором rdf:resource="#авторы4"/>
+  <bookFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleBooks</bookFromResource>
+  <dateBook rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateBook>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfCitationsArticle>
+  <ratingBook rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ratingBook>
+  <urlBook rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://books.google.com/books?id=6uGsl82jOrkC&amp;printsec=frontcover&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;hl=ru&amp;sa=X&amp;ved=2ahUKEwji7Nuf8pX1AhUCkWoFHVA1DY84ChDoAXoECAEQAQ</urlBook>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Книги>
+
+<Авторы rdf:about="#авторы4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторКниги rdf:resource="#Палинология_Казахстана_К_IV_Международной_палинологической"/>
+</Авторы>
+
+<Статьи rdf:about="#Растительность_и_климат_межледниковых_интервалов_плейстоцена_Беларуси_по_данным_палинологических_исследований">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТБ_Рылова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ИЕ_Савченко"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=9161869</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ТБ_Рылова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Растительность_и_климат_межледниковых_интервалов_плейстоцена_Беларуси_по_данным_палинологических_исследований"/>
+</Авторы>
+
+<Авторы rdf:about="#ИЕ_Савченко">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Растительность_и_климат_межледниковых_интервалов_плейстоцена_Беларуси_по_данным_палинологических_исследований"/>
+</Авторы>
+
+<Статьи rdf:about="#Некоторые_новые_данные_о_девонских_спорах_in_situ_и_комментарии_к_номенклатуре_дисперсных_спор_Палинология_стратиграфия_и_геоэкология_Сб">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СМ_Снигиревский"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://pureportal.spbu.ru/en/publications/%D0%BD%D0%B5%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE-%D0%B4%D0%B5%D0%B2%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D1%85-%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D1%85-in-situ-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B8-%D0%BA</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#СМ_Снигиревский">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Некоторые_новые_данные_о_девонских_спорах_in_situ_и_комментарии_к_номенклатуре_дисперсных_спор_Палинология_стратиграфия_и_геоэкология_Сб"/>
+</Авторы>
+
+<Статьи rdf:about="#Опыт_комплексного_использования_геохимических_особенностей_донных_отложений_и_палинологических_записей_для_палеоклиматических_реконструкций_на">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВВ_Бабич"/>
+  <СтатьяНаписанаАвтором rdf:resource="#НА_Рудая"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ИА_Калугин"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://db3.sbras.ru/elib-ict/f_publ_view.php?t_id=59234</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ВВ_Бабич">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Опыт_комплексного_использования_геохимических_особенностей_донных_отложений_и_палинологических_записей_для_палеоклиматических_реконструкций_на"/>
+</Авторы>
+
+<Авторы rdf:about="#ИА_Калугин">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Опыт_комплексного_использования_геохимических_особенностей_донных_отложений_и_палинологических_записей_для_палеоклиматических_реконструкций_на"/>
+</Авторы>
+
+<Статьи rdf:about="#Использование_возможностей_судебной_палинологии_и_фитолитного_анализа_при_расследовании_уголовных_дел_о_незаконном_обороте_наркосодержащих">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#КС_Голохваст"/>
+  <СтатьяНаписанаАвтором rdf:resource="#РИ_Дремлюга"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АИ_Коробеев"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=28874864</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#КС_Голохваст">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Использование_возможностей_судебной_палинологии_и_фитолитного_анализа_при_расследовании_уголовных_дел_о_незаконном_обороте_наркосодержащих"/>
+</Авторы>
+
+<Авторы rdf:about="#РИ_Дремлюга">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Использование_возможностей_судебной_палинологии_и_фитолитного_анализа_при_расследовании_уголовных_дел_о_незаконном_обороте_наркосодержащих"/>
+</Авторы>
+
+<Авторы rdf:about="#АИ_Коробеев">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Использование_возможностей_судебной_палинологии_и_фитолитного_анализа_при_расследовании_уголовных_дел_о_незаконном_обороте_наркосодержащих"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_палинологические_данные_из_ишимской_свиты_верхнего_миоцена_разрез_Масали_Западно_Сибирская_равнина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ОБ_Кузьмина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ИВ_Хазина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ПВ_Смирнов"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/17130064</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ОБ_Кузьмина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_из_ишимской_свиты_верхнего_миоцена_разрез_Масали_Западно_Сибирская_равнина"/>
+  <АвторСтатьи rdf:resource="#Разрезы_верхнего_неоплейстоцена_Прителецкого_района_Горного_Алтая_Литология_палинология_микрофауна"/>
+</Авторы>
+
+<Авторы rdf:about="#ИВ_Хазина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_из_ишимской_свиты_верхнего_миоцена_разрез_Масали_Западно_Сибирская_равнина"/>
+  <АвторСтатьи rdf:resource="#Разрезы_верхнего_неоплейстоцена_Прителецкого_района_Горного_Алтая_Литология_палинология_микрофауна"/>
+</Авторы>
+
+<Авторы rdf:about="#ПВ_Смирнов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_из_ишимской_свиты_верхнего_миоцена_разрез_Масали_Западно_Сибирская_равнина"/>
+</Авторы>
+
+<Статьи rdf:about="#Археолого_палинологические_исследования_в_Украине_неолит_энеолит_и_средневековье_современное_состояние_и_перспективы">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#А_Безусько"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Л_Безусько"/>
+  <СтатьяНаписанаАвтором rdf:resource="#С_Мосяк_н"/>
+  <СтатьяНаписанаАвтором rdf:resource="#Ю_Гречишкина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://ekmair.ukma.edu.ua/bitstream/handle/123456789/339/BezuskoA%20_Arheologo_palinol.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#А_Безусько">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_в_Украине_неолит_энеолит_и_средневековье_современное_состояние_и_перспективы"/>
+</Авторы>
+
+<Авторы rdf:about="#Л_Безусько">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_в_Украине_неолит_энеолит_и_средневековье_современное_состояние_и_перспективы"/>
+</Авторы>
+
+<Авторы rdf:about="#С_Мосяк_н">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_в_Украине_неолит_энеолит_и_средневековье_современное_состояние_и_перспективы"/>
+</Авторы>
+
+<Авторы rdf:about="#Ю_Гречишкина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Археолого_палинологические_исследования_в_Украине_неолит_энеолит_и_средневековье_современное_состояние_и_перспективы"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_хронология_и_тонкая_структура_геомагнитного_поля_голоценовых_отложений_юга_Западной_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СА_Архипов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВС_Волкова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЗН_Гнибиденко"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2000</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=44414399</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#СА_Архипов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_хронология_и_тонкая_структура_геомагнитного_поля_голоценовых_отложений_юга_Западной_Сибири"/>
+</Авторы>
+
+<Авторы rdf:about="#ВС_Волкова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_хронология_и_тонкая_структура_геомагнитного_поля_голоценовых_отложений_юга_Западной_Сибири"/>
+</Авторы>
+
+<Авторы rdf:about="#ЗН_Гнибиденко">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_хронология_и_тонкая_структура_геомагнитного_поля_голоценовых_отложений_юга_Западной_Сибири"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологические_исследования_для_оценки_состояния_окружающей_среды_в_прошлом_и_настоящем">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГИ_Клейменова"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2003</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/15342364</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ГИ_Клейменова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологические_исследования_для_оценки_состояния_окружающей_среды_в_прошлом_и_настоящем"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинология_в_криминалистике">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВМ_Леунова"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ПИ_Токарев"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2009</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=18410698</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ВМ_Леунова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_в_криминалистике"/>
+</Авторы>
+
+<Авторы rdf:about="#ПИ_Токарев">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинология_в_криминалистике"/>
+</Авторы>
+
+<Статьи rdf:about="#Результаты_палинологических_исследований_ледяного_керна_с_ледникового_купола_Вавилова_Северная_Земля">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АА_Андреев"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ВИ_Николаев"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1997</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.evgengusev.narod.ru/grosvald/andreev-1997.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АА_Андреев">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Результаты_палинологических_исследований_ледяного_керна_с_ледникового_купола_Вавилова_Северная_Земля"/>
+</Авторы>
+
+<Авторы rdf:about="#ВИ_Николаев">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Результаты_палинологических_исследований_ледяного_керна_с_ледникового_купола_Вавилова_Северная_Земля"/>
+</Авторы>
+
+<Статьи rdf:about="#Новые_палинологические_данные_о_стоянке_Байбек">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АА_Выборнов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТЮ_Гречкина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/18026263</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АА_Выборнов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_о_стоянке_Байбек"/>
+</Авторы>
+
+<Авторы rdf:about="#ТЮ_Гречкина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Новые_палинологические_данные_о_стоянке_Байбек"/>
+</Авторы>
+
+<Статьи rdf:about="#Результаты_палеопочвенных_и_палинологических_исследований_культурного_слоя_в_восточной_части_кремлевского_холма">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АС_Алешинская"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АВ_Борисов"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.google.com/books?hl=ru&amp;lr=&amp;id=xqF-DwAAQBAJ&amp;oi=fnd&amp;pg=PA16&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;ots=6jn41zbHhl&amp;sig=184ahWeU-8l5R15PXf9ilTjbpis</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АВ_Борисов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Результаты_палеопочвенных_и_палинологических_исследований_культурного_слоя_в_восточной_части_кремлевского_холма"/>
+</Авторы>
+
+<Статьи rdf:about="#ПАЛИНОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_ГОЛОЦЕНОВЫХ_ОТЛОЖЕНИЙ_РУБЛЕВО_МИХАЙЛОВСКИЙ_РАЙОН_АЛТАЙСКОГО_КРАЯ_И_ИХ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГИ_Ненашева"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ММ_Силантьева"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=43189200</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ГИ_Ненашева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ПАЛИНОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_ГОЛОЦЕНОВЫХ_ОТЛОЖЕНИЙ_РУБЛЕВО_МИХАЙЛОВСКИЙ_РАЙОН_АЛТАЙСКОГО_КРАЯ_И_ИХ"/>
+</Авторы>
+
+<Авторы rdf:about="#ММ_Силантьева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ПАЛИНОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_ГОЛОЦЕНОВЫХ_ОТЛОЖЕНИЙ_РУБЛЕВО_МИХАЙЛОВСКИЙ_РАЙОН_АЛТАЙСКОГО_КРАЯ_И_ИХ"/>
+</Авторы>
+
+<Статьи rdf:about="#Разрезы_верхнего_неоплейстоцена_Прителецкого_района_Горного_Алтая_Литология_палинология_микрофауна">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ИВ_Хазина"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГГ_Русанов"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ОБ_Кузьмина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://cyberleninka.ru/article/n/18330953</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ГГ_Русанов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Разрезы_верхнего_неоплейстоцена_Прителецкого_района_Горного_Алтая_Литология_палинология_микрофауна"/>
+</Авторы>
+
+<Статьи rdf:about="#Палинологические_реконструкции_разрезов_среднего_и_позднего_голоцена_побережья_Баренцева_моря">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ТВ_Сапелко"/>
+  <СтатьяНаписанаАвтором rdf:resource="#МА_Анисимов"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.aaresearch.science/jour/article/view/58</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#МА_Анисимов">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Палинологические_реконструкции_разрезов_среднего_и_позднего_голоцена_побережья_Баренцева_моря"/>
+</Авторы>
+
+<Статьи rdf:about="#ПАЛИНОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_НОВЫЕ_ВОЗМОЖНОСТИ_И_ПРАКТИЧЕСКИЙ_ОПЫТ">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ГЕ_Ларина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elibrary.ru/item.asp?id=27477534</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#ГЕ_Ларина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#ПАЛИНОЛОГИЧЕСКИЕ_ИССЛЕДОВАНИЯ_НОВЫЕ_ВОЗМОЖНОСТИ_И_ПРАКТИЧЕСКИЙ_ОПЫТ"/>
+</Авторы>
+
+<Статьи rdf:about="#Основы_палинологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#ЯК_Еловичева"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://elib.bsu.by/bitstream/123456789/161550/1/%D0%95%D0%BB%D0%BE%D0%B2-2016-%D0%9E%D1%81%D0%BD-%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD-%D0%BC%D0%BE%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Статьи rdf:about="#Биостратиграфия_нижнеюрских_отложений_Восточной_Сибири_по_данным_палинологии">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АА_Горячева"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.researchgate.net/profile/Anna-Goryacheva/publication/318787449_BIOSTRATIGRAFIA_NIZNEURSKIH_OTLOZENIJ_VOSTOCNOJ_SIBIRI_PO_DANNYM_PALINOLOGII/links/597ee111aca272d56817c28f/BIOSTRATIGRAFIA-NIZNEURSKIH-OTLOZENIJ-VOSTOCNOJ-SIBIRI-PO-DANNYM-PALINOLOGII.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АА_Горячева">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Биостратиграфия_нижнеюрских_отложений_Восточной_Сибири_по_данным_палинологии"/>
+</Авторы>
+
+<Статьи rdf:about="#К_методике_палинологических_исследований_в_условиях_межгорных_котловин_Южной_Сибири">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#СА_Сафарова"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1964</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.google.com/books?hl=ru&amp;lr=&amp;id=FnvoTIL-9EIC&amp;oi=fnd&amp;pg=PA198&amp;dq=%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F&amp;ots=9MX9_6SFUA&amp;sig=3NedSwq6WJ8vMoXq-n5iNmtRlHc</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#СА_Сафарова">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#К_методике_палинологических_исследований_в_условиях_межгорных_котловин_Южной_Сибири"/>
+</Авторы>
+
+<Статьи rdf:about="#Уровни_стратиграфического_распространения_палинологических_маркеров_среднего_девона_живет_центральной_части_Воронежской_антеклизы">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <СтатьяНаписанаАвтором rdf:resource="#АА_Щемелинина"/>
+  <articleFromResource rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoogleSearch</articleFromResource>
+  <dateArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-03T00:00:00</dateArticle>
+  <datePublishedArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2016</datePublishedArticle>
+  <dowloadsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</dowloadsArticle>
+  <numberOfCitationsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</numberOfCitationsArticle>
+  <ratingArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ratingArticle>
+  <urlArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.vestnik.vsu.ru/pdf/heologia/2016/01/2016-01-23.pdf</urlArticle>
+  <viewsArticle rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</viewsArticle>
+</Статьи>
+
+<Авторы rdf:about="#АА_Щемелинина">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <АвторСтатьи rdf:resource="#Уровни_стратиграфического_распространения_палинологических_маркеров_среднего_девона_живет_центральной_части_Воронежской_антеклизы"/>
+</Авторы>
+
+
+</rdf:RDF>
