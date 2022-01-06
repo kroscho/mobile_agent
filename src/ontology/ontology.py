@@ -260,9 +260,9 @@ class Ontology(object):
                         new_title.ratingBook.append(rating)
                         new_title.dateBook = date
                         new_title.numberOfCitationsArticle.append(numberOfCitations)
-                        new_title.viewsArticle.append(views)
-                        new_title.dowloadsArticle.append(dowloads)
-                        new_title.datePublishedArticle.append(datePublished)
+                        new_title.viewsBook.append(views)
+                        new_title.dowloadsBook.append(dowloads)
+                        new_title.datePublishedBook.append(datePublished)
                         new_title.bookFromResource = resource
                     else:
                         try:

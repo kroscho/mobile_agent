@@ -23,3 +23,10 @@ class typeParseItem(Enum):
     Book = "Книга"
     Article = "Статья"
     Site = "Сайт"
+
+# тип поиска (книги или статьи)
+class typeData(Enum):
+    Books = 1
+    Articles = 2
+    Sites = 3
+    Authors = 4
