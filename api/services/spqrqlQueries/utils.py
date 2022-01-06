@@ -60,6 +60,22 @@ def getAuthorThemesAndDataProperty():
     prop4 = "АвторВебРесурса"
     return prop1, [prop2, prop3, prop4]
 
+# свойства для получения публикаций по теме
+def getDataByThemesProperty(typeSearch):
+    if typeSearch is typeData.Books:
+        prop1 = "КнигаНаписанаПро"
+        prop2 = "ratingBook"
+    elif typeSearch is typeData.Articles:
+        prop1 = "СтатьяНаписанаПро"
+        prop2 = "ratingArticle"
+    elif typeSearch is typeData.Sites:
+        prop1 = "ВебРесурсНаписанПро"
+        prop2 = "ratingWebResource"
+    elif typeSearch is typeData.Authors:
+        prop1 = "АвторПисалПро"
+        prop2 = ""
+    return prop1, prop2 
+
 # добавить полученное свойство в список
 def addItemInList(item, prop, list):
     t = str(item[prop].toPython())

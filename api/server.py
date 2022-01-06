@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, make_response
 from flask_cors import CORS, cross_origin
 from flask_httpauth import HTTPBasicAuth
 auth = HTTPBasicAuth()
@@ -21,9 +21,12 @@ def api_get_books_by_name():
     print(title)
     ont = SparqlQueries()
     data = ont.getDataByNames(title, typeData.Books)
-    data = json.dumps(data, ensure_ascii=False)
-    print(data)
-    return data
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
 
 @app.get('/api/pollen/article_by_name')
 def api_get_article_by_name():
@@ -31,9 +34,12 @@ def api_get_article_by_name():
     print(title)
     ont = SparqlQueries()
     data = ont.getDataByNames(title, typeData.Articles)
-    data = json.dumps(data, ensure_ascii=False)
-    print(data)
-    return data
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
 
 @app.get('/api/pollen/sites_by_name')
 def api_get_sites_by_name():
@@ -41,9 +47,12 @@ def api_get_sites_by_name():
     print(title)
     ont = SparqlQueries()
     data = ont.getDataByNames(title, typeData.Sites)
-    data = json.dumps(data, ensure_ascii=False)
-    print(data)
-    return data
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
 
 @app.get('/api/pollen/authors_by_name')
 def api_get_authors_by_name():
@@ -51,9 +60,64 @@ def api_get_authors_by_name():
     print(title)
     ont = SparqlQueries()
     data = ont.getDataByNames(title, typeData.Authors)
-    data = json.dumps(data, ensure_ascii=False)
-    print(data)
-    return data
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
+
+@app.get('/api/pollen/books_by_theme')
+def api_get_books_by_theme():
+    title = request.args.get('search', '').replace(' ', '_')
+    print(title)
+    ont = SparqlQueries()
+    data = ont.getDataByTheme(title, typeData.Books)
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
+
+@app.get('/api/pollen/article_by_theme')
+def api_get_article_by_theme():
+    title = request.args.get('search', '').replace(' ', '_')
+    print(title)
+    ont = SparqlQueries()
+    data = ont.getDataByTheme(title, typeData.Articles)
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
+
+@app.get('/api/pollen/sites_by_theme')
+def api_get_sites_by_theme():
+    title = request.args.get('search', '').replace(' ', '_')
+    print(title)
+    ont = SparqlQueries()
+    data = ont.getDataByTheme(title, typeData.Sites)
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
+
+@app.get('/api/pollen/authors_by_theme')
+def api_get_authors_by_theme():
+    title = request.args.get('search', '').replace(' ', '_')
+    print(title)
+    ont = SparqlQueries()
+    data = ont.getDataByTheme(title, typeData.Authors)
+    response = make_response(json.dumps({
+        'statusCode': 200,
+        'data': data
+    })), 200
+    print(response)
+    return response
 
 
 

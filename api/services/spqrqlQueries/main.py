@@ -137,10 +137,43 @@ class SparqlQueries:
         print(themes, items)
         return themes, items
 
+    # получаем данные по темам
+    def getDataByTheme(self, theme, typeSearch):
+        prop1, prop2 = utils.getDataByThemesProperty(typeSearch)
+
+        if typeSearch is typeData.Authors:
+            query = queries.getAuthorsByThemesQuery(theme, prop1)
+        else:
+            query = queries.getDataByThemesQuery(theme, prop1, prop2)
+        print("Запрос: ", query)
+
+        result = self.graph.query(query)
+        response = []
+
+        if typeSearch is typeData.Authors:
+            for item in result:
+                author = str(item['author'].toPython())
+                author = re.sub(r'.*#',"", author)
+                themes, items = self.getAuthorThemesAndData(author)
+            
+                if not (themes == [] or items == []):
+                    response.append({'author' : author, 'themes': themes, 'items': items})
+        else:
+            for item in result:
+                title = str(item['title'].toPython())
+                title = re.sub(r'.*#',"", title)
+                themes, authors, url, citations, resourses, views, dowloads, datePublished = self.getTitleThemesAndAuthors(title, typeSearch)
+            
+                if themes != [] or authors != []:
+                    response.append({'title' : title, 'themes': themes, 'authors': authors, 'url': url, 'citations': citations, 'resourse': resourses, 'views': views, 'dowloads': dowloads, 'datePublished': datePublished})
+        print(response)
+        return response
+
 def main():
     ont = SparqlQueries()
     #ont.getDataByNames("Палино", typeData.Books)
-    ont.getAuthorByNames("по")
+    #ont.getAuthorByNames("по")
+    ont.getDataByTheme("палинология", typeData.Books)
 
 
 if __name__ == "__main__":

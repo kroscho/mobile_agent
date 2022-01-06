@@ -222,6 +222,7 @@ class Ontology(object):
                         new_title = Статьи(title.replace(' ', '_'))
                         new_aut = Авторы(author.replace(' ', '_'))
                         new_aut.АвторСтатьи.append(new_title)
+                        new_title.СтатьяНаписанаПро.append(class_theme)
                         new_title.СтатьяНаписанаАвтором.append(new_aut)
                         new_title.urlArticle = url
                         new_title.ratingArticle.append(rating)
@@ -256,6 +257,7 @@ class Ontology(object):
                         new_aut = Авторы(author.replace(' ', '_')) 
                         new_aut.АвторКниги.append(new_title)
                         new_title.КнигаНаписанаАвтором.append(new_aut)
+                        new_title.КнигаНаписанаПро.append(class_theme)
                         new_title.urlBook = url
                         new_title.ratingBook.append(rating)
                         new_title.dateBook = date
@@ -285,6 +287,7 @@ class Ontology(object):
             elif type == utils.typeParseItem.Site.value: 
                 if not existItemInOntology: 
                     new_web_resourse = ВебРесурсы(title.replace(' ', '_'))
+                    new_web_resourse.СайтНаписанПро.append(class_theme)
                     new_web_resourse.urlWebResourse = url
                     new_web_resourse.ratingWebResourse.append(rating)
                     new_web_resourse.dateWebResourse = date
@@ -295,16 +298,16 @@ class Ontology(object):
                     new_title.webFromResource = resource
                 else:
                     try:
-                        new_site = ВебРесурсы(title.replace(' ', '_'))
+                        new_web_resourse = ВебРесурсы(title.replace(' ', '_'))
                     except Exception:
                         print("Не добавлен сайт")
                     else:
                         try:
-                            new_site.СайтНаписанПро.append(class_theme)
+                            new_web_resourse.СайтНаписанПро.append(class_theme)
                         except Exception:
-                            print("ошибка: ", new_site)
+                            print("ошибка: ", new_web_resourse)
                         else: 
-                            new_site.ratingWebResourse.append(rating)
+                            new_web_resourse.ratingWebResourse.append(rating)
 
         self.onto.save(self.path) 
             

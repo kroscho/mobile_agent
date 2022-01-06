@@ -74,3 +74,23 @@ def getAuthorByNameQuery(name):
             "FILTER regex(lcase(STR(?author)), " + "\"" + name + "\"" + ")" \
             "}"
     return query
+
+# запрос на получение публикаций по теме
+def getDataByThemesQuery(theme, prop1, prop2):
+    query = "PREFIX pln: <http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112#>" \
+            "SELECT ?title ?rating " \
+            "WHERE { " \
+            "?title pln:" + prop1 + " pln:" + theme + ". " \
+            "?title pln:" + prop2 + " ?rating" \
+            "} " \
+            "ORDER BY (?rating)"
+    return query
+
+# запрос на получение авторов по теме
+def getAuthorsByThemesQuery(theme, prop):
+    query = "PREFIX pln: <http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112#>" \
+            "SELECT ?author " \
+            "WHERE { " \
+            "?author pln:" + prop + " pln:" + theme + ". " \
+            "} "
+    return query
