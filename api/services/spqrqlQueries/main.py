@@ -21,7 +21,7 @@ class SparqlQueries:
         self.graph = my_world.as_rdflib_graph()
 
     # получение публикаций по названию
-    def getDataByNames(self, title, typeSearch):
+    def getDataByNames(self, title, typeSearch, page, limit):
         prop1, prop2 = utils.getDataByNameProperty(typeSearch)
 
         title = title.lower()
@@ -37,15 +37,17 @@ class SparqlQueries:
         for item in resultsList:
             title = str(item['title'].toPython())
             title = re.sub(r'.*#',"", title)
-            print(title)
-            print()
+            #print(title)
+            #print()
             themes, authors, url, citations, resourses, views, dowloads, datePublished = self.getTitleThemesAndAuthors(title, typeSearch)
             
             if themes != [] or authors != []:
-                response.append({'title' : title, 'themes': themes, 'authors': authors, 'url': url, 'citations': citations, 'resourse': resourses, 'views': views, 'dowloads': dowloads, 'datePublished': datePublished})
+                response.append({'title' : title.replace("_", " "), 'themes': themes, 'authors': authors, 'url': url, 'citations': citations, 'resourse': resourses, 'views': views, 'dowloads': dowloads, 'datePublished': datePublished})
         
-        print(response)
-        return response
+        total_count = len(response)
+        response = response[(int(page)-1)*int(limit) * 10:int(page)*int(limit) * 10]
+        print("total: ", len(response))
+        return response, total_count
 
      # получаем темы и авторов у книги или статьи
     def getTitleThemesAndAuthors(self, title, typeSearch):
@@ -86,7 +88,7 @@ class SparqlQueries:
         return themes, authors, url_list, utils.getListWithMaxElem(citations), resourses, utils.getListWithMaxElem(views), utils.getListWithMaxElem(dowloads), datePublished
 
     # получение авторов по названию
-    def getAuthorByNames(self, name):
+    def getAuthorByNames(self, name, page, limit):
         name = name.lower()
         
         query = queries.getAuthorByNameQuery(name)
@@ -97,15 +99,17 @@ class SparqlQueries:
         for item in result:
             author = str(item['author'].toPython())
             author = re.sub(r'.*#',"", author)
-            print(author)
-            print()
+            #print(author)
+            #print()
             themes, items = self.getAuthorThemesAndData(author)
             
             if not (themes == [] or items == []):
-                response.append({'author' : author, 'themes': themes, 'items': items})
+                response.append({'author' : author.replace("_", " "), 'themes': themes, 'items': items})
         
-        print(response)
-        return response
+        total_count = len(response)
+        response = response[(int(page)-1)*int(limit) * 10:int(page)*int(limit) * 10]
+        #print(response)
+        return response, total_count
 
     # получаем темы и публикации у автора
     def getAuthorThemesAndData(self, name):
@@ -134,11 +138,11 @@ class SparqlQueries:
             else:
                 for item in resultItems:
                     utils.addItemInList(item, 'item', items)
-        print(themes, items)
+        #print(themes, items)
         return themes, items
 
     # получаем данные по темам
-    def getDataByTheme(self, theme, typeSearch):
+    def getDataByTheme(self, theme, typeSearch, page, limit):
         prop1, prop2 = utils.getDataByThemesProperty(typeSearch)
 
         if typeSearch is typeData.Authors:
@@ -165,15 +169,18 @@ class SparqlQueries:
                 themes, authors, url, citations, resourses, views, dowloads, datePublished = self.getTitleThemesAndAuthors(title, typeSearch)
             
                 if themes != [] or authors != []:
-                    response.append({'title' : title, 'themes': themes, 'authors': authors, 'url': url, 'citations': citations, 'resourse': resourses, 'views': views, 'dowloads': dowloads, 'datePublished': datePublished})
-        print(response)
-        return response
+                    response.append({'title' : title.replace("_", " "), 'themes': themes, 'authors': authors, 'url': url, 'citations': citations, 'resourse': resourses, 'views': views, 'dowloads': dowloads, 'datePublished': datePublished})
+        
+        total_count = len(response)
+        response = response[(int(page)-1)*int(limit) * 10:int(page)*int(limit) * 10]
+        #print(response)
+        return response, total_count
 
 def main():
     ont = SparqlQueries()
     #ont.getDataByNames("Палино", typeData.Books)
     #ont.getAuthorByNames("по")
-    ont.getDataByTheme("палинология", typeData.Books)
+    ont.getDataByTheme("палинология", typeData.Authors)
 
 
 if __name__ == "__main__":

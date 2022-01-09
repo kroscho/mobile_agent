@@ -17,104 +17,128 @@ CORS(app)
 
 @app.get('/api/pollen/books_by_name')
 def api_get_books_by_name():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByNames(title, typeData.Books)
+    data, total_count = ont.getDataByNames(_title, typeData.Books, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/article_by_name')
 def api_get_article_by_name():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByNames(title, typeData.Articles)
+    data, total_count = ont.getDataByNames(_title, typeData.Articles, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/sites_by_name')
 def api_get_sites_by_name():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByNames(title, typeData.Sites)
+    data, total_count = ont.getDataByNames(_title, typeData.Sites, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/authors_by_name')
 def api_get_authors_by_name():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByNames(title, typeData.Authors)
+    data, total_count = ont.getAuthorByNames(_title, typeData.Authors, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/books_by_theme')
 def api_get_books_by_theme():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByTheme(title, typeData.Books)
+    data, total_count = ont.getDataByTheme(_title, typeData.Books, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/article_by_theme')
 def api_get_article_by_theme():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByTheme(title, typeData.Articles)
+    data, total_count = ont.getDataByTheme(_title, typeData.Articles, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/sites_by_theme')
 def api_get_sites_by_theme():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByTheme(title, typeData.Sites)
+    data, total_count = ont.getDataByTheme(_title, typeData.Sites, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response
 
 @app.get('/api/pollen/authors_by_theme')
 def api_get_authors_by_theme():
-    title = request.args.get('search', '').replace(' ', '_')
-    print(title)
+    _title = request.args.get('_title', '').replace(' ', '_')
+    _page = request.args.get('_page', '').replace(' ', '_')
+    _limit = request.args.get('_limit', '').replace(' ', '_')
+    print(_title, _page, _limit)
     ont = SparqlQueries()
-    data = ont.getDataByTheme(title, typeData.Authors)
+    data, total_count = ont.getDataByTheme(_title, typeData.Authors, _page, _limit)
     response = make_response(json.dumps({
         'statusCode': 200,
-        'data': data
+        'data': data,
+        'x-total-count': total_count
     })), 200
     print(response)
     return response

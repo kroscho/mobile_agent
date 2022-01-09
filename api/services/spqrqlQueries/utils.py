@@ -86,5 +86,8 @@ def addItemInList(item, prop, list):
 # из списка с нескольми значениями, получить список с одним максимальным значением
 def getListWithMaxElem(list1):
     if list1:
-        return [reduce(lambda x, y: x if int(x) > int(y) else y, list1)]
+        try:
+            return [reduce(lambda x, y: x if int(x) > int(y) else y, list1)]
+        except:
+            return list1
     return list1
