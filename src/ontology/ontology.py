@@ -214,7 +214,7 @@ class Ontology(object):
         for item in resultsList:
             title, authors, url, type, numberOfCitations, views, dowloads, datePublished, theme, rating, date, resource = splitItem(item)
             existItemInOntology = checkExistItemInOntology(title)
-            class_theme = self.onto[theme]
+            class_theme = self.onto[theme.replace(" ", "_")]
 
             if type == utils.typeParseItem.Article.value:                
                 for author in authors:    
@@ -309,6 +309,7 @@ class Ontology(object):
                         else: 
                             new_web_resourse.ratingWebResourse.append(rating)
 
+        print("Добавлено новых: ", self.countNewItems)
         self.onto.save(self.path) 
             
             

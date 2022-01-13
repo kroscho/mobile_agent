@@ -5,7 +5,8 @@ from msmq.msmq import MSMQ
 def main():
     
     msqm = MSMQ()
-    agent = parserAgent.MobileAgent(utils.parseResource.GoogleBooks, "палинология")
+    #agent = parserAgent.MobileAgent(utils.parseResource.GoogleBooks, "палинология")
+    agent = parserAgent.MobileAgent(utils.parseResource.GoogleBooks, "пыльцевые зерна")
 
     result = agent.start()
     #print(result)

@@ -175,7 +175,7 @@ class GoogleSearch(Parser):
                 if (q.text.find("Цитируется") != -1):
                     numberOfCitations = int(q.text[q.text.find(":") + 2:len(q.text)])
             #objDate = self.getNowDate()
-            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleSearch.value})
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.GoogleSearch.value})
             #print({"title": title, "url": url, "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": 1111, "date": objDate})
             isLastPage = False
         return isLastPage
@@ -231,7 +231,7 @@ class GoogleBooks(Parser):
                 datePublished = self.getDatePublished(authorAndDatePublished)
                 type = utils.typeParseItem.Book.value
                 #objDate = self.getNowDate()
-                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.GoogleBooks.value})
+                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.GoogleBooks.value})
                 isLastPage = False
         
         return isLastPage
@@ -287,7 +287,7 @@ class MicrosoftAcademic(Parser):
             entry1 = entry.find("div", attrs={"class", "citations"})
             numberOfCitations = self.getNumberCitation(entry1.find("span").text)
             #objDate = self.getNowDate()
-            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.MicrosoftAcademic.value})
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.MicrosoftAcademic.value})
             isLastPage = False
         
         return isLastPage
@@ -350,7 +350,7 @@ class CyberLeninka(Parser):
             datePublished = entry1.find("span", attrs={"class": "span-block"}).text[0:4]
             views, dowloads = self.getViewsAndDowloadsCyberLink(url)
             #objDate = self.getNowDate()
-            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.CyberLeninka.value})
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.CyberLeninka.value})
             isLastPage = False
         
         return isLastPage
@@ -393,7 +393,7 @@ class PubMed(Parser):
             datePublished = self.getDatePublished(entry.find("span", attrs={"class", "docsum-journal-citation full-journal-citation"}).text)
             type = utils.typeParseItem.Article.value
             #objDate = self.getNowDate()
-            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": 0, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.PubMed.value})
+            result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": 0, "views": 0, "dowloads": 0, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.PubMed.value})
             isLastPage = False
         
         return isLastPage
@@ -452,7 +452,7 @@ class Frontiersin(Parser):
                 url = url # там че то нет ссылки
                 type = utils.typeParseItem.Article.value
                 #objDate = self.getNowDate()
-                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query, "rating": currentPage, "resource": utils.parseResourceText.Frontiersin.value})
+                result.append({"title": title, "url": url, 'date': '', "type": type, "author": author, "numberOfCitations": numberOfCitations, "views": views, "dowloads": dowloads, "datePublished": datePublished, "theme": query.replace("+", " "), "rating": currentPage, "resource": utils.parseResourceText.Frontiersin.value})
                 
         return True
 

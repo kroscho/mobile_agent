@@ -5,7 +5,8 @@ from msmq.msmq import MSMQ
 def main():
     
     msqm = MSMQ()
-    agent = parserAgent.MobileAgent(utils.parseResource.Frontiersin, "palynology")
+    #agent = parserAgent.MobileAgent(utils.parseResource.Frontiersin, "palynology")
+    agent = parserAgent.MobileAgent(utils.parseResource.Frontiersin, "pollen grains")
 
     result = agent.start()
     #print(result)

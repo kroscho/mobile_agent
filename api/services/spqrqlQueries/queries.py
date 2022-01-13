@@ -94,3 +94,23 @@ def getAuthorsByThemesQuery(theme, prop):
             "?author pln:" + prop + " pln:" + theme + ". " \
             "} "
     return query
+
+# запрос на получение актуальных данных за последние 3 дня
+def getActualDataQuery(prop, date):
+    query = "PREFIX pln: <http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112#>" \
+            "SELECT ?title ?day " \
+            "WHERE { " \
+            "?title pln:" + prop + " ?day. " \
+            "FILTER(?day > \"" + date + "\"^^xsd:dateTime). " \
+            "} "
+    return query
+
+# запрос на получение данных, если строка поиска пустая
+def getDataByDataPublishedQuery(prop1, prop2, prop3, year):
+    query = "PREFIX pln: <http://www.semanticweb.org/nikita/ontologies/2021/7/untitled-ontology-112#>" \
+            "SELECT ?title ?year " \
+            "WHERE { " \
+            "?title pln:%s ?year. " \
+            "} " \
+            "ORDER BY (?year)" % (prop2)
+    return query

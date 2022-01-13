@@ -30,3 +30,4 @@ class typeData(Enum):
     Articles = 2
     Sites = 3
     Authors = 4
+    ActualData = 5

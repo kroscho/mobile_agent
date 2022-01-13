@@ -6,6 +6,7 @@ def main():
     
     msqm = MSMQ()
     agent = parserAgent.MobileAgent(utils.parseResource.MicrosoftAcademic, "палинология")
+    #agent = parserAgent.MobileAgent(utils.parseResource.MicrosoftAcademic, "пыльцевые зерна")
 
     result = agent.start()
     #print(result)

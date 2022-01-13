@@ -58,7 +58,8 @@ def getAuthorThemesAndDataProperty():
     prop2 = "АвторКниги"
     prop3 = "АвторСтатьи"
     prop4 = "АвторВебРесурса"
-    return prop1, [prop2, prop3, prop4]
+    prop5 = ["Книги", "Статьи", "Сайты"]
+    return prop1, [prop2, prop3, prop4], prop5
 
 # свойства для получения публикаций по теме
 def getDataByThemesProperty(typeSearch):
@@ -75,6 +76,25 @@ def getDataByThemesProperty(typeSearch):
         prop1 = "АвторПисалПро"
         prop2 = ""
     return prop1, prop2 
+
+def getActualDataProperty():
+    props = ["dateBook", "dateArticle"]
+    return props
+
+def getDataByDataPublishedProperty(typeSearch):
+    if typeSearch is typeData.Books:
+        prop1 = "Книги"
+        prop2 = "datePublishedBook"
+        prop3 = "ratingBook"
+    elif typeSearch is typeData.Articles:
+        prop1 = "Статьи"
+        prop2 = "datePublishedArticle"
+        prop3 = "ratingArticle"
+    elif typeSearch is typeData.Sites:
+        prop1 = "Сайты"
+        prop2 = "datePublishedWebResource"
+        prop3 = "ratingWebResource"
+    return prop1, prop2, prop3 
 
 # добавить полученное свойство в список
 def addItemInList(item, prop, list):
